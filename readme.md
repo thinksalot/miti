@@ -60,7 +60,7 @@ $firstRange->encloses( $secondRange );
 ```
 
 ### Consecutive to
-Checks is a given range immediately follows a another range
+Checks is a given range immediately follows another range
 
 ```php
 $firstRange  = new Miti\DateTimeRange( '2015-01-01', '2015-06-01' );
