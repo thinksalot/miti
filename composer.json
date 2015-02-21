@@ -1,0 +1,16 @@
+{
+	"name": "thinkalot/miti",
+	"type": "library",
+	"description": "Miti is a PHP library for datetiem & datetime range comparision",
+	"license": "MIT",
+
+	"require-dev":{
+		"phpunit/phpunit": "*"
+	},
+
+	"autoload":{
+		"psr-4":{
+			"Miti\\": "src/Miti/"
+		}
+	}
+}
