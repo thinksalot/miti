@@ -2,8 +2,8 @@
 
 <phpunit bootstrap="vendor/autoload.php">
   <testsuites>
-    <testsuit name="Miti test suite">
+    <testsuite name="Miti test suite">
       <directory>./tests/</directory>
-    </testsuit>
+    </testsuite>
   </testsuites>
 </phpunit>
