@@ -1,6 +1,8 @@
 # Miti
 Miti is a simple PHP library for datetime & datetime range comparisons.
 
+[![Build Status](https://travis-ci.org/thinksalot/miti.svg?branch=master)](https://travis-ci.org/thinksalot/miti)
+
 # Loading
 Either using `require` in your app:
 
