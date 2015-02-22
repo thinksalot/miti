@@ -5,21 +5,21 @@
  */
 spl_autoload_register( function( $className ){
 
-	list( $dir, $fileName ) = explode( '\\', $className );
+    list( $dir, $fileName ) = explode( '\\', $className );
 
-	$path = __DIR__
-		. DIRECTORY_SEPARATOR
-		. $dir
-		. DIRECTORY_SEPARATOR
-		. $fileName
-		. '.php'
-	;
+    $path = __DIR__
+        . DIRECTORY_SEPARATOR
+        . $dir
+        . DIRECTORY_SEPARATOR
+        . $fileName
+        . '.php'
+        ;
 
-	if( file_exists( $path ) ){
-		require_once( $path );
-		return TRUE;
-	}
+    if( file_exists( $path ) ){
+        require_once( $path );
+        return TRUE;
+    }
 
-	return FALSE;
+    return FALSE;
 });
 

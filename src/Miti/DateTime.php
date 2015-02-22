@@ -10,52 +10,52 @@ namespace Miti;
  */
 class DateTime extends \DateTime{
 
-	/**
-	 * Converts a given value to datetime object
-	 * 
-	 * @static
-	 * @param    \DateTime|integer|string   $dateTime   The date time object
-	 * @access   public
-	 * @return   DateTime   The date time object
-	 */
-	public static function create( $dateTime ){
+    /**
+     * Converts a given value to datetime object
+     * 
+     * @static
+     * @param    \DateTime|integer|string   $dateTime   The date time object
+     * @access   public
+     * @return   DateTime   The date time object
+     */
+    public static function create( $dateTime ){
 
-		# if unix timestamp
-		if( is_numeric( $dateTime ) ){
+        # if unix timestamp
+        if( is_numeric( $dateTime ) ){
 
-			$timestamp = (int) $dateTime;
-			$instance  = new DateTime();
-			$instance->setTimestamp( $timestamp );
+            $timestamp = (int) $dateTime;
+            $instance  = new DateTime();
+            $instance->setTimestamp( $timestamp );
 
-			return $instance;
-		}
+            return $instance;
+        }
 
-		# if DateTime object
-		if( $dateTime instanceof \DateTime ){
+        # if DateTime object
+        if( $dateTime instanceof \DateTime ){
 
-			$instance = new DateTime();
-			$instance->setTimestamp( $dateTime->getTimestamp() );
+            $instance = new DateTime();
+            $instance->setTimestamp( $dateTime->getTimestamp() );
 
-			return $instance;
-		}
+            return $instance;
+        }
 
-		# else must be a supported string format
-		return new DateTime( $dateTime );
-	}
+        # else must be a supported string format
+        return new DateTime( $dateTime );
+    }
 
-	/**
-	 * Checks whether this datetime falls within a given range
-	 * 
-	 * @param     \DateTime|integer|string    $rangeStart    The start range
-	 * @param     \DateTime|integer|string    $rangeEnd      The end range
-	 * @access    public
-	 * @return    boolean
-	 */
-	public function between( $rangeStart, $rangeEnd ){
+    /**
+     * Checks whether this datetime falls within a given range
+     * 
+     * @param     \DateTime|integer|string    $rangeStart    The start range
+     * @param     \DateTime|integer|string    $rangeEnd      The end range
+     * @access    public
+     * @return    boolean
+     */
+    public function between( $rangeStart, $rangeEnd ){
 
-		$start = self::create( $rangeStart );
-		$end   = self::create( $rangeEnd   );
+        $start = self::create( $rangeStart );
+        $end   = self::create( $rangeEnd   );
 
-		return $this >= $start && $this <= $end;
-	}
+        return $this >= $start && $this <= $end;
+    }
 }
